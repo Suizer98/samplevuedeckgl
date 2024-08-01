@@ -1,9 +1,10 @@
+// src/main.ts
 import { createApp } from 'vue'
 
 import App from './App.vue'
+import './assets/tailwind.css'
 import vuetify from './plugins/vuetify'
-import './style.css'
 
 const app = createApp(App)
-app.use(vuetify) // Use Vuetify
+app.use(vuetify)
 app.mount('#app')

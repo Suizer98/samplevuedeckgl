@@ -29,7 +29,8 @@ export default {
         container: mapContainer.value,
         style: mapStyle,
         center: [INITIAL_VIEW_STATE.longitude, INITIAL_VIEW_STATE.latitude],
-        zoom: INITIAL_VIEW_STATE.zoom
+        zoom: INITIAL_VIEW_STATE.zoom,
+        attributionControl: false
       })
 
       // Initialize the Deck instance
