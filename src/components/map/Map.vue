@@ -44,7 +44,7 @@ export default {
             filled: true,
             pointRadiusMinPixels: 2,
             opacity: 0.4,
-            getRadius: 200,
+            getPointRadius: 200,
             getFillColor: [255, 0, 0]
           })
         ],

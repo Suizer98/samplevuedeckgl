@@ -8,7 +8,7 @@
 
 <script>
 import './assets/tailwind.css'
-import Map from './components/Map.vue'
+import Map from './components/map/Map.vue'
 
 export default {
   name: 'App',
