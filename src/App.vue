@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import './assets/tailwind.css'
 import Map from './components/Map.vue'
 
 export default {
