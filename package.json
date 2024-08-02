@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
-    "format": "prettier --cache --write ."
+    "format": "prettier --cache --write .",
+    "generate-api": "openapi-generator-cli generate -i http://localhost:8000/swagger.json -g typescript-axios -o src/api"
   },
   "dependencies": {
     "@deck.gl/carto": "^9.0.24",
@@ -23,6 +24,7 @@
     "vuetify": "^3.6.14"
   },
   "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.13.4",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/node": "^22.0.0",
     "@vitejs/plugin-vue": "^5.1.1",
