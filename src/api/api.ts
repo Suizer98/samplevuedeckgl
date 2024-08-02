@@ -26,6 +26,31 @@ import { BASE_PATH, COLLECTION_FORMATS, BaseAPI, RequiredError, operationServerM
 /**
  * 
  * @export
+ * @interface ImageFile
+ */
+export interface ImageFile {
+    /**
+     * 
+     * @type {number}
+     * @memberof ImageFile
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ImageFile
+     */
+    'name': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ImageFile
+     */
+    'file'?: string;
+}
+/**
+ * 
+ * @export
  * @interface Polygon
  */
 export interface Polygon {
@@ -38,21 +63,571 @@ export interface Polygon {
 }
 
 /**
- * ComputationApi - axios parameter creator
+ * ApiApi - axios parameter creator
  * @export
  */
-export const ComputationApiAxiosParamCreator = function (configuration?: Configuration) {
+export const ApiApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileDataHistogram: async (id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('apiImageFileDataHistogram', 'id', id)
+            const localVarPath = `/api/image-file/{id}/data/histogram/`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Basic required
+            // http basic authentication required
+            setBasicAuthToObject(localVarRequestOptions, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileDataPixel: async (id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('apiImageFileDataPixel', 'id', id)
+            const localVarPath = `/api/image-file/{id}/data/pixel/`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Basic required
+            // http basic authentication required
+            setBasicAuthToObject(localVarRequestOptions, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileInfoBand: async (id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('apiImageFileInfoBand', 'id', id)
+            const localVarPath = `/api/image-file/{id}/info/band/`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Basic required
+            // http basic authentication required
+            setBasicAuthToObject(localVarRequestOptions, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileInfoBands: async (id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('apiImageFileInfoBands', 'id', id)
+            const localVarPath = `/api/image-file/{id}/info/bands/`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Basic required
+            // http basic authentication required
+            setBasicAuthToObject(localVarRequestOptions, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileInfoFrames: async (id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('apiImageFileInfoFrames', 'id', id)
+            const localVarPath = `/api/image-file/{id}/info/frames/`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Basic required
+            // http basic authentication required
+            setBasicAuthToObject(localVarRequestOptions, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileInfoMetadata: async (id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('apiImageFileInfoMetadata', 'id', id)
+            const localVarPath = `/api/image-file/{id}/info/metadata/`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Basic required
+            // http basic authentication required
+            setBasicAuthToObject(localVarRequestOptions, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileInfoMetadataInternal: async (id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('apiImageFileInfoMetadataInternal', 'id', id)
+            const localVarPath = `/api/image-file/{id}/info/metadata_internal/`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Basic required
+            // http basic authentication required
+            setBasicAuthToObject(localVarRequestOptions, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileInfoTiffdump: async (id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('apiImageFileInfoTiffdump', 'id', id)
+            const localVarPath = `/api/image-file/{id}/info/tiffdump/`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Basic required
+            // http basic authentication required
+            setBasicAuthToObject(localVarRequestOptions, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileList: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/image-file/`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Basic required
+            // http basic authentication required
+            setBasicAuthToObject(localVarRequestOptions, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {string} fmt 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileRegion: async (id: number, fmt: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('apiImageFileRegion', 'id', id)
+            // verify required parameter 'fmt' is not null or undefined
+            assertParamExists('apiImageFileRegion', 'fmt', fmt)
+            const localVarPath = `/api/image-file/{id}/data/region.{fmt}/`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)))
+                .replace(`{${"fmt"}}`, encodeURIComponent(String(fmt)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Basic required
+            // http basic authentication required
+            setBasicAuthToObject(localVarRequestOptions, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {string} fmt 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileThumbnail: async (id: number, fmt: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('apiImageFileThumbnail', 'id', id)
+            // verify required parameter 'fmt' is not null or undefined
+            assertParamExists('apiImageFileThumbnail', 'fmt', fmt)
+            const localVarPath = `/api/image-file/{id}/data/thumbnail.{fmt}/`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)))
+                .replace(`{${"fmt"}}`, encodeURIComponent(String(fmt)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Basic required
+            // http basic authentication required
+            setBasicAuthToObject(localVarRequestOptions, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {string} z 
+         * @param {string} x 
+         * @param {string} y 
+         * @param {string} fmt 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileTile: async (id: number, z: string, x: string, y: string, fmt: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('apiImageFileTile', 'id', id)
+            // verify required parameter 'z' is not null or undefined
+            assertParamExists('apiImageFileTile', 'z', z)
+            // verify required parameter 'x' is not null or undefined
+            assertParamExists('apiImageFileTile', 'x', x)
+            // verify required parameter 'y' is not null or undefined
+            assertParamExists('apiImageFileTile', 'y', y)
+            // verify required parameter 'fmt' is not null or undefined
+            assertParamExists('apiImageFileTile', 'fmt', fmt)
+            const localVarPath = `/api/image-file/{id}/tiles/{z}/{x}/{y}.{fmt}/`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)))
+                .replace(`{${"z"}}`, encodeURIComponent(String(z)))
+                .replace(`{${"x"}}`, encodeURIComponent(String(x)))
+                .replace(`{${"y"}}`, encodeURIComponent(String(y)))
+                .replace(`{${"fmt"}}`, encodeURIComponent(String(fmt)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Basic required
+            // http basic authentication required
+            setBasicAuthToObject(localVarRequestOptions, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {string} z 
+         * @param {string} x 
+         * @param {string} y 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileTilesTileCorners: async (id: number, z: string, x: string, y: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('apiImageFileTilesTileCorners', 'id', id)
+            // verify required parameter 'z' is not null or undefined
+            assertParamExists('apiImageFileTilesTileCorners', 'z', z)
+            // verify required parameter 'x' is not null or undefined
+            assertParamExists('apiImageFileTilesTileCorners', 'x', x)
+            // verify required parameter 'y' is not null or undefined
+            assertParamExists('apiImageFileTilesTileCorners', 'y', y)
+            const localVarPath = `/api/image-file/{id}/tiles/{z}/{x}/{y}/corners/`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)))
+                .replace(`{${"z"}}`, encodeURIComponent(String(z)))
+                .replace(`{${"x"}}`, encodeURIComponent(String(x)))
+                .replace(`{${"y"}}`, encodeURIComponent(String(y)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Basic required
+            // http basic authentication required
+            setBasicAuthToObject(localVarRequestOptions, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileTilesTilesMetadata: async (id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('apiImageFileTilesTilesMetadata', 'id', id)
+            const localVarPath = `/api/image-file/{id}/tiles/metadata/`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Basic required
+            // http basic authentication required
+            setBasicAuthToObject(localVarRequestOptions, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * 
          * @param {Polygon} data 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        computation: async (data: Polygon, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        apiVolumeComputation: async (data: Polygon, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'data' is not null or undefined
-            assertParamExists('computation', 'data', data)
-            const localVarPath = `/computation/`;
+            assertParamExists('apiVolumeComputation', 'data', data)
+            const localVarPath = `/api/volume/computation/`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -86,62 +661,763 @@ export const ComputationApiAxiosParamCreator = function (configuration?: Configu
 };
 
 /**
- * ComputationApi - functional programming interface
+ * ApiApi - functional programming interface
  * @export
  */
-export const ComputationApiFp = function(configuration?: Configuration) {
-    const localVarAxiosParamCreator = ComputationApiAxiosParamCreator(configuration)
+export const ApiApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = ApiApiAxiosParamCreator(configuration)
     return {
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiImageFileDataHistogram(id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImageFile>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiImageFileDataHistogram(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ApiApi.apiImageFileDataHistogram']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiImageFileDataPixel(id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImageFile>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiImageFileDataPixel(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ApiApi.apiImageFileDataPixel']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiImageFileInfoBand(id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImageFile>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiImageFileInfoBand(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ApiApi.apiImageFileInfoBand']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiImageFileInfoBands(id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImageFile>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiImageFileInfoBands(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ApiApi.apiImageFileInfoBands']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiImageFileInfoFrames(id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImageFile>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiImageFileInfoFrames(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ApiApi.apiImageFileInfoFrames']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiImageFileInfoMetadata(id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImageFile>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiImageFileInfoMetadata(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ApiApi.apiImageFileInfoMetadata']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiImageFileInfoMetadataInternal(id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImageFile>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiImageFileInfoMetadataInternal(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ApiApi.apiImageFileInfoMetadataInternal']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiImageFileInfoTiffdump(id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImageFile>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiImageFileInfoTiffdump(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ApiApi.apiImageFileInfoTiffdump']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiImageFileList(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ImageFile>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiImageFileList(options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ApiApi.apiImageFileList']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {string} fmt 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiImageFileRegion(id: number, fmt: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImageFile>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiImageFileRegion(id, fmt, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ApiApi.apiImageFileRegion']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {string} fmt 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiImageFileThumbnail(id: number, fmt: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImageFile>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiImageFileThumbnail(id, fmt, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ApiApi.apiImageFileThumbnail']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {string} z 
+         * @param {string} x 
+         * @param {string} y 
+         * @param {string} fmt 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiImageFileTile(id: number, z: string, x: string, y: string, fmt: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImageFile>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiImageFileTile(id, z, x, y, fmt, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ApiApi.apiImageFileTile']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {string} z 
+         * @param {string} x 
+         * @param {string} y 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiImageFileTilesTileCorners(id: number, z: string, x: string, y: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImageFile>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiImageFileTilesTileCorners(id, z, x, y, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ApiApi.apiImageFileTilesTileCorners']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiImageFileTilesTilesMetadata(id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ImageFile>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiImageFileTilesTilesMetadata(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ApiApi.apiImageFileTilesTilesMetadata']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
         /**
          * 
          * @param {Polygon} data 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async computation(data: Polygon, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.computation(data, options);
+        async apiVolumeComputation(data: Polygon, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiVolumeComputation(data, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ComputationApi.computation']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ApiApi.apiVolumeComputation']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
 
 /**
- * ComputationApi - factory interface
+ * ApiApi - factory interface
  * @export
  */
-export const ComputationApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    const localVarFp = ComputationApiFp(configuration)
+export const ApiApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = ApiApiFp(configuration)
     return {
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileDataHistogram(id: number, options?: any): AxiosPromise<ImageFile> {
+            return localVarFp.apiImageFileDataHistogram(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileDataPixel(id: number, options?: any): AxiosPromise<ImageFile> {
+            return localVarFp.apiImageFileDataPixel(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileInfoBand(id: number, options?: any): AxiosPromise<ImageFile> {
+            return localVarFp.apiImageFileInfoBand(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileInfoBands(id: number, options?: any): AxiosPromise<ImageFile> {
+            return localVarFp.apiImageFileInfoBands(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileInfoFrames(id: number, options?: any): AxiosPromise<ImageFile> {
+            return localVarFp.apiImageFileInfoFrames(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileInfoMetadata(id: number, options?: any): AxiosPromise<ImageFile> {
+            return localVarFp.apiImageFileInfoMetadata(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileInfoMetadataInternal(id: number, options?: any): AxiosPromise<ImageFile> {
+            return localVarFp.apiImageFileInfoMetadataInternal(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileInfoTiffdump(id: number, options?: any): AxiosPromise<ImageFile> {
+            return localVarFp.apiImageFileInfoTiffdump(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileList(options?: any): AxiosPromise<Array<ImageFile>> {
+            return localVarFp.apiImageFileList(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {string} fmt 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileRegion(id: number, fmt: string, options?: any): AxiosPromise<ImageFile> {
+            return localVarFp.apiImageFileRegion(id, fmt, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {string} fmt 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileThumbnail(id: number, fmt: string, options?: any): AxiosPromise<ImageFile> {
+            return localVarFp.apiImageFileThumbnail(id, fmt, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {string} z 
+         * @param {string} x 
+         * @param {string} y 
+         * @param {string} fmt 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileTile(id: number, z: string, x: string, y: string, fmt: string, options?: any): AxiosPromise<ImageFile> {
+            return localVarFp.apiImageFileTile(id, z, x, y, fmt, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {string} z 
+         * @param {string} x 
+         * @param {string} y 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileTilesTileCorners(id: number, z: string, x: string, y: string, options?: any): AxiosPromise<ImageFile> {
+            return localVarFp.apiImageFileTilesTileCorners(id, z, x, y, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {number} id A unique integer value identifying this image file.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiImageFileTilesTilesMetadata(id: number, options?: any): AxiosPromise<ImageFile> {
+            return localVarFp.apiImageFileTilesTilesMetadata(id, options).then((request) => request(axios, basePath));
+        },
         /**
          * 
          * @param {Polygon} data 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        computation(data: Polygon, options?: any): AxiosPromise<void> {
-            return localVarFp.computation(data, options).then((request) => request(axios, basePath));
+        apiVolumeComputation(data: Polygon, options?: any): AxiosPromise<void> {
+            return localVarFp.apiVolumeComputation(data, options).then((request) => request(axios, basePath));
         },
     };
 };
 
 /**
- * ComputationApi - object-oriented interface
+ * ApiApi - object-oriented interface
  * @export
- * @class ComputationApi
+ * @class ApiApi
  * @extends {BaseAPI}
  */
-export class ComputationApi extends BaseAPI {
+export class ApiApi extends BaseAPI {
+    /**
+     * 
+     * @param {number} id A unique integer value identifying this image file.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ApiApi
+     */
+    public apiImageFileDataHistogram(id: number, options?: RawAxiosRequestConfig) {
+        return ApiApiFp(this.configuration).apiImageFileDataHistogram(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} id A unique integer value identifying this image file.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ApiApi
+     */
+    public apiImageFileDataPixel(id: number, options?: RawAxiosRequestConfig) {
+        return ApiApiFp(this.configuration).apiImageFileDataPixel(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} id A unique integer value identifying this image file.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ApiApi
+     */
+    public apiImageFileInfoBand(id: number, options?: RawAxiosRequestConfig) {
+        return ApiApiFp(this.configuration).apiImageFileInfoBand(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} id A unique integer value identifying this image file.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ApiApi
+     */
+    public apiImageFileInfoBands(id: number, options?: RawAxiosRequestConfig) {
+        return ApiApiFp(this.configuration).apiImageFileInfoBands(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} id A unique integer value identifying this image file.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ApiApi
+     */
+    public apiImageFileInfoFrames(id: number, options?: RawAxiosRequestConfig) {
+        return ApiApiFp(this.configuration).apiImageFileInfoFrames(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} id A unique integer value identifying this image file.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ApiApi
+     */
+    public apiImageFileInfoMetadata(id: number, options?: RawAxiosRequestConfig) {
+        return ApiApiFp(this.configuration).apiImageFileInfoMetadata(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} id A unique integer value identifying this image file.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ApiApi
+     */
+    public apiImageFileInfoMetadataInternal(id: number, options?: RawAxiosRequestConfig) {
+        return ApiApiFp(this.configuration).apiImageFileInfoMetadataInternal(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} id A unique integer value identifying this image file.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ApiApi
+     */
+    public apiImageFileInfoTiffdump(id: number, options?: RawAxiosRequestConfig) {
+        return ApiApiFp(this.configuration).apiImageFileInfoTiffdump(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ApiApi
+     */
+    public apiImageFileList(options?: RawAxiosRequestConfig) {
+        return ApiApiFp(this.configuration).apiImageFileList(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} id A unique integer value identifying this image file.
+     * @param {string} fmt 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ApiApi
+     */
+    public apiImageFileRegion(id: number, fmt: string, options?: RawAxiosRequestConfig) {
+        return ApiApiFp(this.configuration).apiImageFileRegion(id, fmt, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} id A unique integer value identifying this image file.
+     * @param {string} fmt 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ApiApi
+     */
+    public apiImageFileThumbnail(id: number, fmt: string, options?: RawAxiosRequestConfig) {
+        return ApiApiFp(this.configuration).apiImageFileThumbnail(id, fmt, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} id A unique integer value identifying this image file.
+     * @param {string} z 
+     * @param {string} x 
+     * @param {string} y 
+     * @param {string} fmt 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ApiApi
+     */
+    public apiImageFileTile(id: number, z: string, x: string, y: string, fmt: string, options?: RawAxiosRequestConfig) {
+        return ApiApiFp(this.configuration).apiImageFileTile(id, z, x, y, fmt, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} id A unique integer value identifying this image file.
+     * @param {string} z 
+     * @param {string} x 
+     * @param {string} y 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ApiApi
+     */
+    public apiImageFileTilesTileCorners(id: number, z: string, x: string, y: string, options?: RawAxiosRequestConfig) {
+        return ApiApiFp(this.configuration).apiImageFileTilesTileCorners(id, z, x, y, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {number} id A unique integer value identifying this image file.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ApiApi
+     */
+    public apiImageFileTilesTilesMetadata(id: number, options?: RawAxiosRequestConfig) {
+        return ApiApiFp(this.configuration).apiImageFileTilesTilesMetadata(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * 
      * @param {Polygon} data 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ComputationApi
+     * @memberof ApiApi
      */
-    public computation(data: Polygon, options?: RawAxiosRequestConfig) {
-        return ComputationApiFp(this.configuration).computation(data, options).then((request) => request(this.axios, this.basePath));
+    public apiVolumeComputation(data: Polygon, options?: RawAxiosRequestConfig) {
+        return ApiApiFp(this.configuration).apiVolumeComputation(data, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * LargeImageApi - axios parameter creator
+ * @export
+ */
+export const LargeImageApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * This does not currently list the palettable palettes there isn\'t a clean way to list all of them.
+         * @summary List of available palettes.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        largeImageApiLargeImageColormapsList: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/large_image/api/large-image/colormaps`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Basic required
+            // http basic authentication required
+            setBasicAuthToObject(localVarRequestOptions, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        largeImageApiLargeImageFormatsList: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/large_image/api/large-image/formats`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Basic required
+            // http basic authentication required
+            setBasicAuthToObject(localVarRequestOptions, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        largeImageApiLargeImageSourcesList: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/large_image/api/large-image/sources`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Basic required
+            // http basic authentication required
+            setBasicAuthToObject(localVarRequestOptions, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * LargeImageApi - functional programming interface
+ * @export
+ */
+export const LargeImageApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = LargeImageApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * This does not currently list the palettable palettes there isn\'t a clean way to list all of them.
+         * @summary List of available palettes.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async largeImageApiLargeImageColormapsList(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.largeImageApiLargeImageColormapsList(options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['LargeImageApi.largeImageApiLargeImageColormapsList']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async largeImageApiLargeImageFormatsList(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.largeImageApiLargeImageFormatsList(options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['LargeImageApi.largeImageApiLargeImageFormatsList']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async largeImageApiLargeImageSourcesList(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.largeImageApiLargeImageSourcesList(options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['LargeImageApi.largeImageApiLargeImageSourcesList']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+    }
+};
+
+/**
+ * LargeImageApi - factory interface
+ * @export
+ */
+export const LargeImageApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = LargeImageApiFp(configuration)
+    return {
+        /**
+         * This does not currently list the palettable palettes there isn\'t a clean way to list all of them.
+         * @summary List of available palettes.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        largeImageApiLargeImageColormapsList(options?: any): AxiosPromise<void> {
+            return localVarFp.largeImageApiLargeImageColormapsList(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        largeImageApiLargeImageFormatsList(options?: any): AxiosPromise<void> {
+            return localVarFp.largeImageApiLargeImageFormatsList(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        largeImageApiLargeImageSourcesList(options?: any): AxiosPromise<void> {
+            return localVarFp.largeImageApiLargeImageSourcesList(options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * LargeImageApi - object-oriented interface
+ * @export
+ * @class LargeImageApi
+ * @extends {BaseAPI}
+ */
+export class LargeImageApi extends BaseAPI {
+    /**
+     * This does not currently list the palettable palettes there isn\'t a clean way to list all of them.
+     * @summary List of available palettes.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof LargeImageApi
+     */
+    public largeImageApiLargeImageColormapsList(options?: RawAxiosRequestConfig) {
+        return LargeImageApiFp(this.configuration).largeImageApiLargeImageColormapsList(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof LargeImageApi
+     */
+    public largeImageApiLargeImageFormatsList(options?: RawAxiosRequestConfig) {
+        return LargeImageApiFp(this.configuration).largeImageApiLargeImageFormatsList(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof LargeImageApi
+     */
+    public largeImageApiLargeImageSourcesList(options?: RawAxiosRequestConfig) {
+        return LargeImageApiFp(this.configuration).largeImageApiLargeImageSourcesList(options).then((request) => request(this.axios, this.basePath));
     }
 }
 

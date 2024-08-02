@@ -14,22 +14,41 @@ export default {
   setup() {
     const mapContainer = ref(null)
     const INITIAL_VIEW_STATE = {
-      longitude: -122.45,
-      latitude: 37.8,
-      zoom: 10,
+      longitude: 85.4,
+      latitude: 21.9,
+      zoom: 12,
       pitch: 0,
       bearing: 0
     }
     const mapStyle = BASEMAP.POSITRON
 
     onMounted(() => {
-      // Initialize the maplibre map
+      // Initialize the maplibre map with Carto basemap style
       const map = new maplibregl.Map({
         container: mapContainer.value,
         style: mapStyle,
         center: [INITIAL_VIEW_STATE.longitude, INITIAL_VIEW_STATE.latitude],
         zoom: INITIAL_VIEW_STATE.zoom,
         attributionControl: false
+      })
+
+      // Add custom raster tiles source
+      map.on('load', () => {
+        map.addSource('raster-tiles', {
+          type: 'raster',
+          tiles: ['http://localhost:8000/api/image-file/2/tiles/{z}/{x}/{y}.png'],
+          // tiles: ['http://localhost:8000/api/tiles/{z}/{x}/{y}.png'],
+          tileSize: 256
+        })
+
+        // Add custom raster tiles layer
+        map.addLayer({
+          id: 'raster-tiles',
+          type: 'raster',
+          source: 'raster-tiles',
+          minzoom: 0,
+          maxzoom: 22
+        })
       })
 
       // Initialize the Deck instance
